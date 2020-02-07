@@ -1,5 +1,6 @@
 package com.ghsong.springboot.domain.posts;
 
+import com.ghsong.springboot.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,7 +12,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 // 테이블과 링크 될 클래스, 클래스의 카멜케이스 이름으로 테이블 생성
 @Entity
-public class Posts {
+public class Posts extends BaseTimeEntity {
 
     // 테이블의 PK 필드
     @Id
