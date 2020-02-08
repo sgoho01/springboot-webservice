@@ -1,5 +1,6 @@
 package com.ghsong.springboot.web;
 
+import com.ghsong.springboot.config.auth.LoginUser;
 import com.ghsong.springboot.config.auth.dto.SessionUser;
 import com.ghsong.springboot.service.posts.PostsService;
 import com.ghsong.springboot.web.dto.PostsResponseDto;
@@ -16,12 +17,11 @@ import javax.servlet.http.HttpSession;
 public class IndexController {
 
     private final PostsService postsService;
-    private final HttpSession httpSession;
 
     @GetMapping("/")
-    public String index(Model model) {
+    public String index(Model model, @LoginUser SessionUser user) {
         model.addAttribute("posts", postsService.findAllDEesc());
-        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+
         if(user != null) {
             model.addAttribute("name", user.getName());
         }
