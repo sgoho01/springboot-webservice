@@ -23,7 +23,7 @@ script: "./gradlew clean build"
 before_deploy:
   - zip -r springboot-webservice *    # 현재 위치 모든 파일을 springboot-webservice 이름으로 압축
   - mkdir -p deploy
-  - mv springboot2-webservice.zip deploy/springboot2-webservice.zip
+  - mv springboot-webservice.zip deploy/springboot-webservice.zip
 
 deploy:
   - provider: s3
