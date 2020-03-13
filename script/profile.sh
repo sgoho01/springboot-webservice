@@ -16,11 +16,11 @@ function find_idle_profile()
         CURRENT_PROFILE=$(curl -s https://localhost/profile)
     fi
 
-    if [ ${CURRENT_PROFILE} == real1 ]
+    if [[ ${CURRENT_PROFILE} == real1 ]]
     then
         IDLE_PROFILE=real2      # 엔진엑스와 연결되지 않은 profile.
     else
-        IDLE_PROFILE=real
+        IDLE_PROFILE=real1
     fi
 
     # bash라는 스크립트는 값을 반환하는 기능이 없습니다.
