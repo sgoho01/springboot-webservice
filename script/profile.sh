@@ -16,7 +16,7 @@ function find_idle_profile()
         CURRENT_PROFILE=$(curl -s https://localhost/profile)
     fi
 
-    if [ ${CURRENT_PROFILE} == null ]
+    if [ ${CURRENT_PROFILE} == real1 ]
     then
         IDLE_PROFILE=real2      # 엔진엑스와 연결되지 않은 profile.
     else
@@ -32,7 +32,7 @@ function find_idle_profile()
 # 쉬고 있는 profile의 port 찾기
 function find_idle_port()
 {
-    IDEL_PROFILE=$(find_idel_profile)
+    IDLE_PROFILE=$(find_idel_profile)
 
     if [ ${IDLE_PROFILE} == real1 ]
     then
